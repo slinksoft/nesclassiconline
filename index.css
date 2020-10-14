@@ -1,0 +1,35 @@
+body{
+    background-color: #0B0036;
+}
+
+section.topborder img
+{
+    height: 10vh;
+    width: 100%;
+}
+
+section.bottomborder img
+{
+    
+    width: 100%;
+}
+
+section.gameMenu
+{
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 100px;
+    
+    
+    min-height: calc(54vh); /* needed for footer. Place this at main content of webpage */
+}
+section.gameMenu img
+{
+    height: 300px;
+    width: 200px;
+}
+
+section.gameMenu img:hover
+{
+    border: 2px solid #BBBBBB;
+}

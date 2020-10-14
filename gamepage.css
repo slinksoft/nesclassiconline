@@ -1,0 +1,36 @@
+body{
+    background-color: #0B0036;
+}
+
+section.topborder img
+{
+    height: 10vh;
+    width: 100%;
+}
+
+section.bottomborder img
+{
+    
+    width: 100%;
+}
+
+section.gameSection
+{   
+    position: static;
+    margin-top: 10px;
+   
+    min-height: calc(54vh); /* needed for footer. Place this at main content of webpage */
+}
+
+section.gameSection img
+{
+    height: 300px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+section.controls{
+    margin-left: 50px;
+}

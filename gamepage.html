@@ -1,0 +1,170 @@
+<html>
+<head>
+<link rel="stylesheet" href="gamepage.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script src="js/loader.js"></script>
+<script type="text/javascript">
+	// Parse the URL parameter
+	function getParameterByName(name, url) {
+	    if (!url) url = window.location.href;
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+	// Give the parameter a variable name
+	var gameID = getParameterByName('gID');
+    var game;
+	 $(document).ready(function() {
+ 
+		// Check the URL parameter for a specific game (ex. smb)
+		if (gameID == 'balloonfight') {
+            EJS_gameUrl = "roms/balloonfight.nes";
+		}
+        else if (gameID == 'bubblebobble') {
+			EJS_gameUrl = "roms/bubblebobble.nes";
+		}
+        else if (gameID == 'castlevania') {
+			EJS_gameUrl = "roms/castlevania.nes";
+		}
+        else if (gameID == 'castlevania2') {
+			EJS_gameUrl = "roms/castlevania2.nes";
+		}
+        else if (gameID == 'donkeykong') {
+			EJS_gameUrl = "roms/donkeykong.nes";
+		}
+        else if (gameID == 'donkeykongjr') {
+			EJS_gameUrl = "roms/donkeykongjr.nes";
+		}
+        else if (gameID == 'doubledragon2') {
+			EJS_gameUrl = "roms/Doubledragon2.nes";
+		}
+        else if (gameID == 'drmario') {
+			EJS_gameUrl = "roms/drmario.nes";
+		}
+        else if (gameID == 'excitebike') {
+			EJS_gameUrl = "roms/excitebike.nes";
+		}
+        else if (gameID == 'finalfantasy') {
+			EJS_gameUrl = "roms/finalfantasy.nes";
+		}
+        else if (gameID == 'galaga') {
+			EJS_gameUrl = "roms/galaga.nes";
+		}
+        else if (gameID == 'ghostandgoblins') {
+			EJS_gameUrl = "roms/ghostandgoblins.nes";
+		}
+        else if (gameID == 'gradius') {
+			EJS_gameUrl = "roms/gradius.nes";
+		}
+        else if (gameID == 'iceclimber') {
+			EJS_gameUrl = "roms/iceclimber.nes";
+		}
+        else if (gameID == 'kidicarus') {
+			EJS_gameUrl = "roms/kidicarus.nes";
+		}
+        else if (gameID == 'kirbysadventure') {
+			EJS_gameUrl = "roms/kirbysadventure.nes";
+		}
+        else if (gameID == 'mariobrothers') {
+			EJS_gameUrl = "roms/mariobrothers.nes";
+		}
+        else if (gameID == 'megaman2') {
+			EJS_gameUrl = "roms/megaman2.nes";
+		}
+        else if (gameID == 'metroid') {
+			EJS_gameUrl = "roms/metroid.nes";
+		}
+        else if (gameID == 'ninjagaiden') {
+			EJS_gameUrl = "roms/ninjagaiden.nes";
+		}
+        else if (gameID == 'pacman') {
+			EJS_gameUrl = "roms/pacman.nes";
+		}
+        else if (gameID == 'punchout') {
+			EJS_gameUrl = "roms/punchout.nes";
+		}
+        else if (gameID == 'smb') {
+			EJS_gameUrl = "roms/smb.nes";
+		}
+        else if (gameID == 'smb2') {
+			EJS_gameUrl = "roms/smb2.nes";
+		}
+        else if (gameID == 'smb3') {
+			EJS_gameUrl = "roms/smb3.nes";
+		}
+        else if (gameID == 'startropics') {
+			EJS_gameUrl = "roms/startropics.nes";
+		}
+        else if (gameID == 'superc') {
+			EJS_gameUrl = "roms/superc.nes";
+		}
+        else if (gameID == 'tecmobowl') {
+			EJS_gameUrl = "roms/tecmobowl.nes";
+		}
+        else if (gameID == 'zelda') {
+			EJS_gameUrl = "roms/zelda.nes";
+		}
+        else if (gameID == 'zelda2') {
+			EJS_gameUrl = "roms/zelda2.nes";
+		}
+		// Check if the URL parmeter is empty or not defined
+		else {
+            alert("Invalid Game ID in parameter!");
+		}
+	});
+    
+    EJS_player = '#game';
+    EJS_biosUrl = ''; // Url to Famicom Disk System bios
+    EJS_gameID = 1; // ID in your website, required for netplay.
+    EJS_core = 'nes';
+    EJS_lightgun = false; // Lightgun
+    
+    $(document).ready(function(){
+  $("#hide").click(function(){
+    $("section.controls").hide();
+  });
+  $("#show").click(function(){
+    $("section.controls").show();
+  });
+ $("#backmenu").click(function(){
+    window.location = "index.html";
+  });
+}); 
+</script>
+</head>
+<body>
+<section class="topborder">
+<img src="imgs/toppage.png">
+</section>    
+
+<section class=gameSection align=center>
+<center>
+    <div>
+    <section class="controls">
+        <br>
+        <img width=300 height=200 src=imgs/controls.png>
+    </section>
+    <button id="hide">Hide Controls</button>
+    <button id="show">Show Controls</button>
+    <br>
+    <font color=#FFFFFF>Javascript required to play games.</font>
+    <br>
+    <button id="backmenu">Back To Game Menu</button>
+<br><br>
+
+<div style="width:640px;height:480px;max-width:100%">
+  <div id="game"></div>
+</div>
+</section>
+    <br>
+</center>
+    
+<section class="bottomborder">
+<img src="imgs/bottompage.png">
+</section>
+</body>
+</html>
